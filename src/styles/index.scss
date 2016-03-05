@@ -1,5 +1,7 @@
-$test: steelblue;
+$color: steelblue;
+$fontSize: 20px;
 
 p {
-    color: $test;
+    color: $color;
+    font-size: $fontSize * 3;
 }

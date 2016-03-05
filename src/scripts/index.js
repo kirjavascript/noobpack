@@ -10,8 +10,8 @@ const d3 = Object.assign({},
     transition
 );
 
-d3.select('body')
-    .style('background-color', '#000')
+d3.select('p')
+    .style('color', '#FFF')
     .transition()
-    .duration(1000)
-    .style('background-color', '#FFF')
+    .duration(1500)
+    .style('color', 'steelblue')
