@@ -1,0 +1,106 @@
+// media queries
+@mixin device-large {
+    @media only screen and (min-width : 1200px) { @content; }
+}
+
+@mixin device-medium {
+    @media only screen and (min-width : 992px) { @content; }
+}
+
+@mixin device-small {
+    @media only screen and (min-width : 768px) { @content; }
+}
+
+@mixin device-mobile {
+    @media only screen and (max-width : 767px) { @content; }
+}
+
+@mixin device-mobile-tiny {
+    @media only screen and (max-width : 420px) { @content; }
+}
+
+
+// vertical align (relative)
+@mixin vert ($pct:50%) {
+    top: $pct;
+    @include transform(translateY(-50%));
+}
+
+// horizontal align (absolute)
+@mixin horiz ($pct:50%) {
+    left: $pct;
+    @include transform(translateX(-50%));
+}
+
+// align both (parent must be relative)
+@mixin centerer ($x:50%,$y:50%) {
+    position: absolute;
+    top: $x;
+    left: $y;
+    @include transform(translate(-50%, -50%));
+}
+
+@mixin abs-pos ($top: auto, $right: auto, $bottom: auto, $left: auto) {
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+    position: absolute;
+}
+
+// background image
+@mixin background ($img:file, $size:auto, $fade:0, $repeat:no-repeat, $x:0px, $y:0px) {
+    background-image: url(#{$img}); // fallback
+    background-image: fader($fade), url(#{$img});
+    background-size: $size;
+    background-repeat: $repeat;
+    background-position: #{$x} #{$y};
+}
+
+@function fader($fade) {
+    @return linear-gradient(rgba(0, 0, 0, $fade), rgba(0, 0, 0, $fade));
+}
+
+// Border radius shorthand
+@mixin border-radius($radius) {
+  border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  -o-border-radius: $radius;
+}
+
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+// transform shorthand
+@mixin transform($transforms) {
+       -moz-transform: $transforms;
+         -o-transform: $transforms;
+        -ms-transform: $transforms;
+    -webkit-transform: $transforms;
+          transform: $transforms;
+}
+
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+    @if $inset {
+        -webkit-box-shadow:inset $top $left $blur $color;
+        -moz-box-shadow:inset $top $left $blur $color;
+        box-shadow:inset $top $left $blur $color;
+    } @else {
+        -webkit-box-shadow: $top $left $blur $color;
+        -moz-box-shadow: $top $left $blur $color;
+        box-shadow: $top $left $blur $color;
+    }
+}
+
+@mixin transition($args...) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+}   
