@@ -1,4 +1,5 @@
-var xtrkt = require("extract-text-webpack-plugin");
+var xtract = require("extract-text-webpack-plugin");
+// var copy = require("copy-webpack-plugin");
 
 module.exports = {
     entry:  [
@@ -21,23 +22,21 @@ module.exports = {
             },
             {
                 test: /\.scss/,
-                loader: xtrkt.extract('style', 'css!sass')
-            },
-            {
-                test: /\.html/,
-                loader: 'html'
+                loader: xtract.extract('style', 'css!sass')
             }
         ],
     },
     plugins: [
-        new xtrkt('main.css')
+        new xtract('main.css'),
+        // new copy([
+        //     { from: './build/main.css', to: '/website/static'},
+        // ], '/var/www/html')
     ]
 };
 
 
 // TODO: 
-// copy on production
-// bootstrap
+// copy
 // webpack 2 / tree shake
 // react
 // hot reload
