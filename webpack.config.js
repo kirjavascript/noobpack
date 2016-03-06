@@ -1,4 +1,5 @@
-var xtract = require("extract-text-webpack-plugin");
+var webpack = require('webpack');
+var ExtractText = require("extract-text-webpack-plugin");
 // var copy = require("copy-webpack-plugin");
 
 module.exports = {
@@ -22,21 +23,26 @@ module.exports = {
             },
             {
                 test: /\.scss/,
-                loader: xtract.extract('style', 'css!sass')
+                loader: ExtractText.extract('style', 'css!sass')
             }
         ],
     },
     plugins: [
-        new xtract('main.css'),
+        new ExtractText('main.css'),
         // new copy([
         //     { from: './build/main.css', to: '/website/static'},
         // ], '/var/www/html')
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery"
+        })
     ]
 };
 
 
 // TODO: 
 // copy
+
 // webpack 2 / tree shake
 // react
 // hot reload

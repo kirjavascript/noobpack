@@ -5,6 +5,9 @@ import './test';
 import * as selection from 'd3-selection';
 import * as transition from 'd3-transition';
 
+// bootstrap
+import 'bootstrap-sass';
+
 const d3 = Object.assign({}, 
     selection, 
     transition
