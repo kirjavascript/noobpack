@@ -5,7 +5,7 @@ var ExtractText = require("extract-text-webpack-plugin");
 module.exports = {
     entry:  [
         './src/scripts/index.js',
-        './src/styles/bootstrap/bootstrap.scss',
+        // './src/styles/bootstrap/bootstrap.scss',
         './src/styles/index.scss',
     ],
     output: {
@@ -31,20 +31,11 @@ module.exports = {
     plugins: [
         new ExtractText('main.css'),
         // new copy([
-        //     { from: './build/main.css', to: '/website/static'},
-        // ], '/var/www/html')
-        new webpack.ProvidePlugin({
-            $: "jquery",
-            jQuery: "jquery"
-        })
+        //     { from: './build', to: '../../website/static'},
+        // ]),
+        // new webpack.ProvidePlugin({
+        //     $: "jquery",
+        //     jQuery: "jquery"
+        // })
     ]
 };
-
-
-// TODO: 
-// copy
-
-// webpack 2 / tree shake
-// react
-// hot reload
-// async
