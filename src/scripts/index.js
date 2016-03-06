@@ -16,5 +16,5 @@ const d3 = Object.assign({},
 d3.select('p')
     .style('color', '#FFF')
     .transition()
-    .duration(1500)
+    .duration(1200)
     .style('color', 'steelblue')
