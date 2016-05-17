@@ -1,41 +1,34 @@
 var webpack = require('webpack');
-var ExtractText = require("extract-text-webpack-plugin");
-// var copy = require("copy-webpack-plugin");
+var copy = require("copy-webpack-plugin");
 
 module.exports = {
-    entry:  [
-        './src/scripts/index.js',
-        //'./src/styles/bootstrap/bootstrap.scss',
-        './src/styles/index.scss',
+    entry : [
+        './modules/js/index.js',
+        'webpack/hot/dev-server',
     ],
     output: {
-        path:     'build',
-        filename: 'main.js',
+        path:     'static',
+        filename: 'bundle.js',
     },
     module: {
         loaders: [
             {
                 test:   /\.js/,
                 loader: 'babel',
-                include: __dirname + '/src',
+                include: __dirname + '/modules/js',
                 query: {
                     presets: ['es2015'],
                 }
             },
             {
                 test: /\.scss/,
-                loader: ExtractText.extract('style', 'css!sass!import-glob')
+                loader: 'style!css!sass!import-glob'
             }
         ],
     },
     plugins: [
-        new ExtractText('main.css'),
-        // new copy([
-        //     { from: './build', to: '../../website/static'},
-        // ]),
-        // new webpack.ProvidePlugin({
-        //     $: "jquery",
-        //     jQuery: "jquery"
-        // })
+        new copy([
+            { from: './templates', to: '.'},
+        ]),
     ]
 };

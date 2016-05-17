@@ -1,0 +1,28 @@
+html, body {
+    height: 100%;
+    background-color: #FFFF00;
+}
+
+a {
+    text-decoration: none;
+
+    &:active,
+    &:visited,
+    &:hover,
+    &:link {
+        text-decoration: none;
+    }
+}
+
+::selection {
+    background-color: #FFDD33;
+    color: #222222;
+}
+::-moz-selection {
+    background-color: #FFDD33;
+    color: #222222;
+}
+
+.btn {
+    touch-action: none;
+}
