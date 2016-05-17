@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "webpack",
-    "start": "webpack-dev-server --hot --content-base static/",
+    "start": "webpack-dev-server --hot --inline --content-base static/",
     "minify": "webpack -p"
   },
   "author": "",

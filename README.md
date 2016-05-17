@@ -1,6 +1,8 @@
 # noobpack
 
-[bulkier version](https://github.com/gatherdigitaluk/webpack-template)
+Hot reload server is running at http://localhost:8080/
+
+[bulkier version with various differences](https://github.com/gatherdigitaluk/webpack-template)
 
 `npm install` to install deps
 
