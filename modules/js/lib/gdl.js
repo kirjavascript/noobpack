@@ -1,5 +1,19 @@
 import * as d3 from './d3';
 
+export function ready(callback) {
+    if (document.readyState != 'loading'){
+        callback();
+    }
+    else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', callback);
+    }
+    else {
+        document.attachEvent('onreadystatechange', function() {
+            if (document.readyState != 'loading') callback();
+        });
+    }
+};
+
 export const math = {
     seed: 4, // https://xkcd.com/221/,
     random(min = 0, max = 1) {

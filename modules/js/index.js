@@ -1,3 +1,6 @@
 import '../scss/index.scss'
+import flip from 'ejs-compiled!../html/flip.html';
 
-console.log('neat')
+document.write(flip({
+    info: '(╯°□°）╯︵ ┻━┻'
+}))

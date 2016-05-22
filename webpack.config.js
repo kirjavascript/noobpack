@@ -4,7 +4,7 @@ var copy = require("copy-webpack-plugin");
 module.exports = {
     entry : [
         './modules/js/index.js',
-        'webpack/hot/dev-server',
+        //'webpack/hot/dev-server',
     ],
     output: {
         path:     'static',
