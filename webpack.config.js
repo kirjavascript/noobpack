@@ -23,7 +23,8 @@ module.exports = {
             {
                 test: /\.scss/,
                 loader: 'style!css!sass!import-glob'
-            }
+            },
+            { test: /\.html?$/, loader: "ejs-compiled-loader?delimiter=%3F" }
         ],
     },
     plugins: [

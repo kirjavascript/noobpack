@@ -1,4 +1,8 @@
 export {
+  version
+} from "./build/package";
+
+export {
   bisect,
   bisectRight,
   bisectLeft,
@@ -375,15 +379,21 @@ export {
 } from "d3-scale";
 
 export {
+  creator,
+  customEvent,
+  event,
+  matcher,
   mouse,
   namespace,
   namespaces,
   select,
   selectAll,
   selection,
+  selector,
+  selectorAll,
   touch,
   touches,
-  event
+  window
 } from "d3-selection";
 
 export {
@@ -397,6 +407,37 @@ export {
   axisBottom,
   axisLeft
 } from "d3-axis";
+
+export {
+  cluster,
+  hierarchy,
+  pack,
+  packSiblings,
+  packEnclose,
+  partition,
+  stratify,
+  tree,
+  treemap,
+  treemapBinary,
+  treemapDice,
+  treemapSlice,
+  treemapSliceDice,
+  treemapSquarify
+} from "d3-hierarchy";
+
+export {
+  forceCenter,
+  forceCollide,
+  forceLink,
+  forceManyBody,
+  forceSimulation,
+  forceX,
+  forceY
+} from "d3-force";
+
+export {
+  drag
+} from "d3-drag";
 
 export {
   voronoi
