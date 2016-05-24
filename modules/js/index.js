@@ -6,9 +6,14 @@ d3.select('body').html(flip({
     info: '(╯°□°）╯︵ ┻━┻'
 }))
 
-let rainbow = d3.scaleRainbow();
+let rainbow = d3.scaleRainbow()
+    .domain([0, 100]);
 
-d3.interval(function(elapsed) {
+let i = 0;
+
+d3.interval(elapsed => {
+
     d3.select('.flip')
-        .style('color', rainbow(elapsed))
-}, 200);
+        .style('color', rainbow(++i%100))
+
+});
