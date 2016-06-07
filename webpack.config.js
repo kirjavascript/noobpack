@@ -3,7 +3,7 @@ var copy = require("copy-webpack-plugin");
 
 module.exports = {
     entry : [
-        './modules/js/index.js',
+        './modules/js/index.jsx',
         //'webpack/hot/dev-server',
     ],
     output: {
@@ -13,18 +13,17 @@ module.exports = {
     module: {
         loaders: [
             {
-                test:   /\.js/,
+                test:   /\.jsx/,
                 loader: 'babel',
                 include: __dirname + '/modules/js',
                 query: {
-                    presets: ['es2015'],
+                    presets: ['es2015', 'react'],
                 }
             },
             {
                 test: /\.scss/,
                 loader: 'style!css!sass!import-glob'
-            },
-            { test: /\.html?$/, loader: "ejs-compiled-loader?delimiter=%3F" }
+            }
         ],
     },
     plugins: [
