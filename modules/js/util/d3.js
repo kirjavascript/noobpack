@@ -24,6 +24,7 @@ export {
   shuffle,
   sum,
   ticks,
+  tickStep,
   transpose,
   variance,
   zip
@@ -364,6 +365,7 @@ export {
   scaleCategory20b,
   scaleCategory20c,
   scaleCategory20,
+  scaleSequential,
   scaleCubehelix,
   scaleRainbow,
   scaleWarm,
@@ -394,6 +396,7 @@ export {
 
 export {
   active,
+  interrupt,
   transition
 } from "d3-transition";
 
@@ -432,9 +435,17 @@ export {
 } from "d3-force";
 
 export {
-  drag
+  drag,
+  dragDisable,
+  dragEnable
 } from "d3-drag";
 
 export {
   voronoi
 } from "d3-voronoi";
+
+export {
+  zoom,
+  zoomIdentity,
+  zoomTransform
+} from "d3-zoom";
