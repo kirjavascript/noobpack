@@ -33,3 +33,14 @@ module.exports = {
         ]),
     ]
 };
+
+if(~process.argv.indexOf('--crush')) {
+
+    module.exports.plugins.push(
+        new webpack.optimize.UglifyJsPlugin({
+            output: { comments: false },
+            compress: { warnings: false },
+        })
+    )
+
+}
