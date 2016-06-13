@@ -34,7 +34,6 @@ module.exports = {
     ]
 };
 
-// minify
 
 if(~process.argv.indexOf('--crush')) {
 
@@ -46,8 +45,6 @@ if(~process.argv.indexOf('--crush')) {
     )
 
 }
-
-// dev flag
 
 module.exports.plugins.push(
     new webpack.DefinePlugin({
