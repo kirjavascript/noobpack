@@ -17,3 +17,8 @@ d3.interval(elapsed => {
         .style('color', rainbow(++i%100))
 
 });
+
+if (__DEV__) {
+    console.clear();
+    console.warn('Development mode');
+}

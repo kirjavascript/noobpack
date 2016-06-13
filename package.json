@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "webpack",
-    "start": "webpack-dev-server --content-base static/",
-    "hot": "webpack-dev-server --hot --inline --content-base static/",
+    "start": "webpack-dev-server --content-base static/ --dev",
+    "hot": "webpack-dev-server --hot --inline --content-base static/ --dev",
     "minify": "webpack -p"
   },
   "author": "",
