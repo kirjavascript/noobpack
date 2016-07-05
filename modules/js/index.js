@@ -6,6 +6,8 @@ d3.select('body').html(flip({
     info: '(╯°□°）╯︵ ┻━┻'
 }))
 
+console.log(d3);
+
 let rainbow = d3.scaleRainbow()
     .domain([0, 100]);
 

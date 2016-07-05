@@ -24,7 +24,13 @@ module.exports = {
                 test: /\.scss/,
                 loader: 'style!css!sass!import-glob'
             },
-            { test: /\.html?$/, loader: "ejs-compiled-loader?delimiter=%3F" }
+            {
+                test: /\.svg$/,
+                loader: 'svg-url?noquotes!svgo'
+            },
+            { 
+                test: /\.html?$/, loader: "ejs-compiled-loader?delimiter=%3F"
+            }
         ],
     },
     plugins: [
