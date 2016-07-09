@@ -1,0 +1,23 @@
+.property {
+    position: relative;
+    display: inline-block;
+
+    .dropdown {
+        position: absolute;
+        left: 0px;
+        border: 1px solid #BBB;
+        background-color: #FFF;
+        z-index: 2;
+
+        .option {
+            //text-align: right;
+            padding: 5px;
+        }
+
+        .option:first-child {
+            font-style: italic;
+        }
+    }
+}
+
+   
