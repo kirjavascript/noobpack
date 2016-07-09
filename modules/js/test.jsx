@@ -12,7 +12,7 @@ class Test extends React.Component {
     }
 
     componentDidMount () {
-        this.setState({ data: ['about','audio_file','advance'] })
+        this.setState({ data: ['about','audio_file','advance', 'arrows'] })
     }
 
     clicked () {
