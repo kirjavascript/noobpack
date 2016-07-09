@@ -23,7 +23,11 @@ module.exports = {
             {
                 test: /\.scss/,
                 loader: 'style!css!sass!import-glob'
-            }
+            },
+            {
+                test: /\.svg$/,
+                loader: 'svg-url?noquotes!svgo'
+            },
         ],
     },
     plugins: [
@@ -32,3 +36,20 @@ module.exports = {
         ]),
     ]
 };
+
+if(~process.argv.indexOf('--crush')) {
+
+    module.exports.plugins.push(
+        new webpack.optimize.UglifyJsPlugin({
+            output: { comments: false },
+            compress: { warnings: false },
+        })
+    )
+
+}
+
+module.exports.plugins.push(
+    new webpack.DefinePlugin({
+        __DEV__: ~process.argv.indexOf('--dev')
+    })
+);
