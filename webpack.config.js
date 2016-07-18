@@ -22,7 +22,7 @@ module.exports = {
             },
             {
                 test: /\.scss/,
-                loader: 'style!css!sass!import-glob'
+                loader: 'style!raw!sass!import-glob'
             },
             {
                 test: /\.svg$/,
