@@ -17,12 +17,12 @@ module.exports = {
                 loader: 'babel',
                 include: __dirname + '/modules/js',
                 query: {
-                    presets: ['es2015', 'react'],
+                    presets: ['es2015', 'react', 'stage-0'],
                 }
             },
             {
                 test: /\.scss/,
-                loader: 'style!css!sass!import-glob'
+                loader: 'style!css?modules&localIdentName=[local][hash:base64:5]!sass'
             },
             {
                 test: /\.svg$/,
@@ -43,6 +43,11 @@ if(~process.argv.indexOf('--crush')) {
         new webpack.optimize.UglifyJsPlugin({
             output: { comments: false },
             compress: { warnings: false },
+        }),
+        new webpack.DefinePlugin({
+            'process.env': {
+                'NODE_ENV': JSON.stringify('production')
+            }
         })
     )
 
