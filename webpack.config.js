@@ -34,6 +34,9 @@ module.exports = {
         new copy([
             { from: './templates', to: '.'},
         ]),
+        new webpack.ProvidePlugin({
+            React: 'react'
+        })
     ]
 };
 
