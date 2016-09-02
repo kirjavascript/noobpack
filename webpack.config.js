@@ -40,6 +40,18 @@ module.exports = {
     ]
 };
 
+if (~process.argv.indexOf('--dash')) {
+
+    var Dashboard = require('webpack-dashboard');
+    var DashboardPlugin = require('webpack-dashboard/plugin');
+
+    var dashboard = new Dashboard();
+
+    module.exports.plugins.push(
+        new DashboardPlugin(dashboard.setData)
+    );
+}
+
 
 if(~process.argv.indexOf('--crush')) {
 
