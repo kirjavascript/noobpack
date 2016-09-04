@@ -1,5 +1,6 @@
 var webpack = require('webpack');
 var copy = require("copy-webpack-plugin");
+//var ClosureCompiler = require('google-closure-compiler-js').webpack;
 
 module.exports = {
     entry : [
@@ -59,9 +60,16 @@ if(~process.argv.indexOf('--crush')) {
         new webpack.optimize.UglifyJsPlugin({
             output: { comments: false },
             compress: { warnings: false },
-        })
+        }),
+        // new ClosureCompiler({
+        //   options: {
+        //     languageIn: 'ECMASCRIPT5',
+        //     languageOut: 'ECMASCRIPT5',
+        //     compilationLevel: 'ADVANCED',
+        //     warningLevel: 'QUIET',
+        //   },
+        // })
     )
-
 }
 
 module.exports.plugins.push(
