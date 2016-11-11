@@ -2,7 +2,10 @@ html, body {
     height: 100%;
 }
 
+$var: 12px;
+
 a {
+    font-size:12px;
     text-decoration: none;
 
     &:active,

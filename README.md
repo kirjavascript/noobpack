@@ -1,11 +1,19 @@
 # noobpack
 
-[bulkier version with various differences](https://github.com/gatherdigitaluk/webpack-template)
+webpack2 config template
 
-`npm install` to install deps
+most features are optional, and can be combined based on `--env` flags
 
-`npm install d3@next` for d3 v4
+see package.json for usage
 
-`npm start` to run webpack-dev-server in live reloading mode at http://127.0.0.1:8080/webpack-dev-server/
+includes;
+    tree shaking
+    SASS / ES6 / stage-0
+    CSS extract
+    CSS modules
+    ESLint
+    babili
+    closure-compiler
+    webpack-dashboard
 
-`npm run hot` for hot reloading (uncomment a line in webpack.config.js)
+[kopimi](https://en.wikipedia.org/wiki/Piratbyr%C3%A5n#Kopimi)
