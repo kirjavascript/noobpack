@@ -8,17 +8,13 @@ module.exports = (env={}) => {
     let styleLoaders, babelPresets;
 
     let config = {
-
-        entry : [
-            './modules/js/index.js'
-        ],
-
-
+        entry: {
+            bundle: './modules/js/index.js'
+        },
         output: {
             path:     'static',
-            filename: 'bundle.js',
+            filename: '[name].js',
         },
-
         module: {
             rules: [
                 {
@@ -58,13 +54,11 @@ module.exports = (env={}) => {
                 }
             ]
         },
-
         plugins: [
             new webpack.DefinePlugin({
                 __DEV__: env.dev
             }),
         ]
-
     }
 
     if (env.devServer) {
