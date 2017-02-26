@@ -58,7 +58,8 @@ module.exports = (env={}) => {
             new webpack.DefinePlugin({
                 __DEV__: env.dev
             }),
-        ]
+        ],
+        devtool: env.dev ? 'source-map' : false
     }
 
     if (env.devServer) {
