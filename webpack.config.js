@@ -1,9 +1,6 @@
 let webpack = require('webpack');
 
-// TODO
-// tree shaking with import * as ...
-
-module.exports = (env={}) => {
+module.exports = (env={}, args={}) => {
 
     let styleLoaders, babelPresets;
 
@@ -43,7 +40,7 @@ module.exports = (env={}) => {
                 {
                     test: /\.svg$/,
                     use: [
-                        { 
+                        {
                             loader:'svg-url-loader',
                             options: {
                                 noquotes: true
